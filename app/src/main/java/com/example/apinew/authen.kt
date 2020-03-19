@@ -69,8 +69,18 @@ class authen : Fragment() {
                 val profile = profile().newInstance(user!!.photoUrl.toString(),user!!.displayName.toString())
                 val fm = fragmentManager
                 val transaction : FragmentTransaction = fm!!.beginTransaction()
-                transaction.replace(R.id.layout, profile,"fragment_profile")
+                transaction.replace(R.id.head, profile,"fragment_profile")
                 transaction.addToBackStack("fragment_profile")
+
+
+                val ShowData = ShowData()
+                transaction.replace(R.id.show, ShowData, "fragment_ShowData")
+                transaction.addToBackStack("fragment_ShowData")
+
+                val DataRealtime = DataRealtime()
+                transaction.replace(R.id.add, DataRealtime, "fragment_DataRealtime")
+                transaction.addToBackStack("fragment_DataRealtime")
+
                 transaction.commit()
 
             } else {

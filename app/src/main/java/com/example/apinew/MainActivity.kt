@@ -13,7 +13,6 @@ import java.util.*
 class MainActivity : AppCompatActivity() {
 
 
-
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,24 +20,12 @@ class MainActivity : AppCompatActivity() {
 
         debugHashKey()
 
-        val authen = authen()
+        val chatroom = chatroom()
         val manager = supportFragmentManager
         val transaction = manager.beginTransaction()
-
-
-        val ShowData = ShowData()
-        transaction.replace(R.id.show, ShowData,"fragment_ShowData")
-        transaction.addToBackStack("fragment_ShowData")
-
-        val DataRealtime = DataRealtime()
-        transaction.replace(R.id.add, DataRealtime,"fragment_DataRealtime")
-        transaction.addToBackStack("fragment_DataRealtime")
-
-
-        transaction.replace(R.id.layout, authen,"fragment_authen")
-        transaction.addToBackStack("fragment_authen")
+        transaction.replace(R.id.layout, chatroom, "fragment_chatroom")
+        transaction.addToBackStack("fragment_chatroom")
         transaction.commit()
-
 
     }
 

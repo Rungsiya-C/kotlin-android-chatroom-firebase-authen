@@ -3,15 +3,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
     android:gravity="center"
+    android:orientation="vertical"
     tools:context=".authen">
 
     <ImageView
         android:id="@+id/iv_profile"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:layout_centerHorizontal="true" />
+
     <TextView
         android:id="@+id/tv_name"
         android:layout_width="wrap_content"
@@ -22,45 +23,13 @@
         android:textSize="18sp" />
 
     <Button
-        android:text="logout"
         android:id="@+id/login_button2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"/>
+        android:layout_gravity="center"
+        android:text="logout" />
 
-<!--    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
-<!--        xmlns:tools="http://schemas.android.com/tools"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:orientation="vertical"-->
-<!--        tools:context=".DataRealtime">-->
+</LinearLayout>
 
-        <Button
-            android:text="add1"
-            android:id="@+id/btn1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-
-        <Button
-            android:text="add2"
-            android:id="@+id/btn2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-
-        <Button
-            android:text="add3"
-            android:id="@+id/btn3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-
-        <Button
-            android:text="add4"
-            android:id="@+id/btn4"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-
-    </LinearLayout>
-
-<!--</LinearLayout>-->
 
 
