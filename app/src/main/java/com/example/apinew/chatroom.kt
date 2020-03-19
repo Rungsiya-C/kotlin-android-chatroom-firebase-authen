@@ -26,13 +26,16 @@ class chatroom : Fragment() {
         val fm = fragmentManager
         val transaction : FragmentTransaction = fm!!.beginTransaction()
         transaction.replace(R.id.head, fragment_authen,"fragment_authen")
-        transaction.addToBackStack("fragment_authen")
+//        transaction.addToBackStack("fragment_authen")
+        transaction.addToBackStack(null)
 
 
 
         val MainChart = MainChart()
         transaction.replace(R.id.show, MainChart,"fragment_MainChart")
-        transaction.addToBackStack("fragment_MainChart")
+//        transaction.addToBackStack("fragment_MainChart")
+        transaction.addToBackStack(null)
+
 
 
         transaction.commit()

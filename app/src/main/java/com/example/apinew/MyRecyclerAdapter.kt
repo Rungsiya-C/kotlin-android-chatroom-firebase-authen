@@ -15,23 +15,23 @@ import com.bumptech.glide.Glide
 import org.json.JSONArray
 
 
-class MyRecyclerAdapter (context: Context,fm: FragmentManager, val dataSource: JSONArray) : RecyclerView.Adapter<MyRecyclerAdapter.Holder>() {
+class MyRecyclerAdapter(context: Context, fm: FragmentManager, private val dataSource: JSONArray) :
+    RecyclerView.Adapter<MyRecyclerAdapter.Holder>() {
 
 
-
-    private val thiscontext : Context = context
+    private val thiscontext: Context = context
     private val fragment: FragmentManager = fm
 
-    class Holder(view : View) : RecyclerView.ViewHolder(view) {
+    class Holder(view: View) : RecyclerView.ViewHolder(view) {
 
         private val View = view;
 
-        lateinit var layout : LinearLayout
+        lateinit var layout: LinearLayout
         lateinit var titleTextView: TextView
         lateinit var detailTextView: TextView
         lateinit var image: ImageView
 
-        fun Holder(){
+        fun Holder() {
 
             layout = View.findViewById<View>(R.id.recyview_layout) as LinearLayout
             titleTextView = View.findViewById<View>(R.id.tv_name) as TextView
@@ -43,8 +43,10 @@ class MyRecyclerAdapter (context: Context,fm: FragmentManager, val dataSource: J
 
     }
 
-    override fun onCreateViewHolder(parent : ViewGroup, viewType: Int): Holder {
-        return Holder(LayoutInflater.from(parent.context).inflate(R.layout.recy_layout, parent, false))
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
+        return Holder(
+            LayoutInflater.from(parent.context).inflate(R.layout.recy_layout, parent, false)
+        )
     }
 
 
@@ -56,8 +58,12 @@ class MyRecyclerAdapter (context: Context,fm: FragmentManager, val dataSource: J
 
         holder.Holder()
 
-        holder.titleTextView.setText( dataSource.getJSONObject(position).getString("title").toString() )
-        holder.detailTextView.setText( dataSource.getJSONObject(position).getString("description").toString() )
+        holder.titleTextView.setText(
+            dataSource.getJSONObject(position).getString("title").toString()
+        )
+        holder.detailTextView.setText(
+            dataSource.getJSONObject(position).getString("description").toString()
+        )
 
         Glide.with(thiscontext)
             .load(dataSource.getJSONObject(position).getString("image").toString())
@@ -65,28 +71,33 @@ class MyRecyclerAdapter (context: Context,fm: FragmentManager, val dataSource: J
 
 
 
-      holder.layout.setOnClickListener{
+        holder.layout.setOnClickListener {
 
-          Toast.makeText(thiscontext,holder.titleTextView.text.toString(),Toast.LENGTH_SHORT).show()
+            Toast.makeText(thiscontext, holder.titleTextView.text.toString(), Toast.LENGTH_SHORT)
+                .show()
 
-          val head:String = dataSource.getJSONObject(position).getString("title").toString()
-          val body:String = dataSource.getJSONObject(position).getString("description").toString()
-          val img:String = dataSource.getJSONObject(position).getString("image").toString()
+            val head: String = dataSource.getJSONObject(position).getString("title").toString()
+            val body: String =
+                dataSource.getJSONObject(position).getString("description").toString()
+            val img: String = dataSource.getJSONObject(position).getString("image").toString()
 
-          val item_selected = item_selected().newInstance(head,body,img)
-          val transaction : FragmentTransaction = fragment.beginTransaction()
-          transaction.replace(R.id.layout, item_selected,"item_selected")
-          transaction.addToBackStack("item_selected")
-          transaction.commit()
-           Toast.makeText(thiscontext,holder.titleTextView.text.toString(),Toast.LENGTH_SHORT).show()
-       }
+            val item_selected = item_selected().newInstance(head, body, img)
+            val transaction: FragmentTransaction = fragment.beginTransaction()
+            transaction.replace(R.id.layout, item_selected, "item_selected")
+            transaction.addToBackStack("item_selected")
+
+            val emptyShow = Empty()
+            transaction.replace(R.id.show, emptyShow, "EmptyShow")
+            val emptyHead = Empty()
+            transaction.replace(R.id.head, emptyHead, "EmptyHead")
+
+
+            transaction.commit()
+            Toast.makeText(thiscontext, holder.titleTextView.text.toString(), Toast.LENGTH_SHORT)
+                .show()
+        }
 
     }
-
-
-
-
-
 
 
 }

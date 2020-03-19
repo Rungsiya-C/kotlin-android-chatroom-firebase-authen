@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
         val manager = supportFragmentManager
         val transaction = manager.beginTransaction()
         transaction.replace(R.id.layout, chatroom, "fragment_chatroom")
-        transaction.addToBackStack("fragment_chatroom")
+        transaction.addToBackStack(null)
         transaction.commit()
 
     }
