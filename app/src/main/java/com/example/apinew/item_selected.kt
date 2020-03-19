@@ -14,11 +14,11 @@ import com.bumptech.glide.Glide
  */
 class item_selected : Fragment() {
 
-    private var head: String = ""
-    private var body: String = ""
-    private var img: String = ""
+    private var head : String = ""
+    private var body : String = ""
+    private var img : String = ""
 
-    fun newInstance(head: String, body: String, img: String): item_selected {
+    fun newInstance(head: String,body: String,img: String): item_selected {
 
         val fragment = item_selected()
         val bundle = Bundle()
@@ -29,7 +29,6 @@ class item_selected : Fragment() {
 
         return fragment
     }
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,15 +43,16 @@ class item_selected : Fragment() {
     }
 
 
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_item_selected, container, false)
-        val imgVi: ImageView = view.findViewById(R.id.imgV)
-        val headTxt: TextView = view.findViewById(R.id.tv_name)
-        val bodyTxt: TextView = view.findViewById(R.id.tv_description)
+        val imgVi : ImageView = view.findViewById(R.id.imgV)
+        val headTxt : TextView = view.findViewById(R.id.tv_name)
+        val bodyTxt : TextView = view.findViewById(R.id.tv_description)
 
 
         headTxt.setText(head)
@@ -64,5 +64,6 @@ class item_selected : Fragment() {
 
         return view
     }
+
 
 }

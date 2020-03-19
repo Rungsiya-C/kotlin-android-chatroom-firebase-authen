@@ -14,7 +14,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import org.json.JSONArray
 
-class RecycAdapter (context: Context, fm: FragmentManager, val dataSource: JSONArray) : RecyclerView.Adapter<RecycAdapter.Holder>() {
+
+class MyRecyclerAdapter (context: Context,fm: FragmentManager, val dataSource: JSONArray) : RecyclerView.Adapter<MyRecyclerAdapter.Holder>() {
 
 
 
@@ -31,6 +32,7 @@ class RecycAdapter (context: Context, fm: FragmentManager, val dataSource: JSONA
         lateinit var image: ImageView
 
         fun Holder(){
+
             layout = View.findViewById<View>(R.id.recyview_layout) as LinearLayout
             titleTextView = View.findViewById<View>(R.id.tv_name) as TextView
             detailTextView = View.findViewById<View>(R.id.tv_description) as TextView
@@ -42,7 +44,7 @@ class RecycAdapter (context: Context, fm: FragmentManager, val dataSource: JSONA
     }
 
     override fun onCreateViewHolder(parent : ViewGroup, viewType: Int): Holder {
-        return Holder(LayoutInflater.from(parent.context).inflate(R.layout.activity_main, parent, false))
+        return Holder(LayoutInflater.from(parent.context).inflate(R.layout.recy_layout, parent, false))
     }
 
 
@@ -63,21 +65,21 @@ class RecycAdapter (context: Context, fm: FragmentManager, val dataSource: JSONA
 
 
 
-        holder.layout.setOnClickListener{
+      holder.layout.setOnClickListener{
 
-            Toast.makeText(thiscontext,holder.titleTextView.text.toString(),Toast.LENGTH_SHORT).show()
+          Toast.makeText(thiscontext,holder.titleTextView.text.toString(),Toast.LENGTH_SHORT).show()
 
-            val head:String = dataSource.getJSONObject(position).getString("title").toString()
-            val body:String = dataSource.getJSONObject(position).getString("description").toString()
-            val img:String = dataSource.getJSONObject(position).getString("image").toString()
+          val head:String = dataSource.getJSONObject(position).getString("title").toString()
+          val body:String = dataSource.getJSONObject(position).getString("description").toString()
+          val img:String = dataSource.getJSONObject(position).getString("image").toString()
 
-            val item_selected = item_selected().newInstance(head,body,img)
-            val transaction : FragmentTransaction = fragment.beginTransaction()
-            transaction.replace(R.id.show, item_selected,"item_selected")
-            transaction.addToBackStack("item_selected")
-            transaction.commit()
-            Toast.makeText(thiscontext,holder.titleTextView.text.toString(),Toast.LENGTH_SHORT).show()
-        }
+          val item_selected = item_selected().newInstance(head,body,img)
+          val transaction : FragmentTransaction = fragment.beginTransaction()
+          transaction.replace(R.id.layout, item_selected,"item_selected")
+          transaction.addToBackStack("item_selected")
+          transaction.commit()
+           Toast.makeText(thiscontext,holder.titleTextView.text.toString(),Toast.LENGTH_SHORT).show()
+       }
 
     }
 

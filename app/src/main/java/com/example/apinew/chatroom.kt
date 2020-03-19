@@ -12,14 +12,6 @@ import androidx.fragment.app.FragmentTransaction
  */
 class chatroom : Fragment() {
 
-//    override fun onCreateView(
-//        inflater: LayoutInflater, container: ViewGroup?,
-//        savedInstanceState: Bundle?
-//    ): View? {
-//        // Inflate the layout for this fragment
-//        return inflater.inflate(R.layout.fragment_chatroom, container, false)
-//    }
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -27,11 +19,21 @@ class chatroom : Fragment() {
     ): View? {
         val view : View = inflater.inflate(R.layout.activity_main, container, false)
 
+
+
         val fragment_authen = authen()
+
         val fm = fragmentManager
         val transaction : FragmentTransaction = fm!!.beginTransaction()
         transaction.replace(R.id.head, fragment_authen,"fragment_authen")
         transaction.addToBackStack("fragment_authen")
+
+
+
+        val MainChart = MainChart()
+        transaction.replace(R.id.show, MainChart,"fragment_MainChart")
+        transaction.addToBackStack("fragment_MainChart")
+
 
         transaction.commit()
 
