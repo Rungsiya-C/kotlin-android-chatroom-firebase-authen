@@ -18,6 +18,7 @@
         tools:context=".MainActivity">
 
         <LinearLayout
+            android:padding="10dp"
             android:id="@+id/head"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -25,6 +26,7 @@
             android:orientation="vertical" />
 
         <LinearLayout
+            android:padding="10dp"
             android:id="@+id/show"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -32,6 +34,7 @@
             android:orientation="vertical" />
 
         <LinearLayout
+            android:padding="10dp"
             android:id="@+id/add"
             android:layout_width="match_parent"
             android:layout_height="match_parent"

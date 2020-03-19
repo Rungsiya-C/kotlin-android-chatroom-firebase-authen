@@ -38,6 +38,17 @@ class chatroom : Fragment() {
 
 
 
+
+        val yellow = Yellow()
+        transaction.replace(R.id.add, yellow, "yellow")
+        transaction.addToBackStack(null)
+
+
+
+
+
+
+
         transaction.commit()
 
         return view;

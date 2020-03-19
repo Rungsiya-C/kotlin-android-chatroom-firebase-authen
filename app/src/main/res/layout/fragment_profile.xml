@@ -5,6 +5,8 @@
     android:layout_height="wrap_content"
     android:gravity="center"
     android:orientation="vertical"
+    android:background="#0f4c75"
+    android:padding="10dp"
     tools:context=".authen">
 
     <ImageView
@@ -20,6 +22,7 @@
         android:layout_below="@id/iv_profile"
         android:layout_centerHorizontal="true"
         android:text="Name"
+        android:textColor="#bbe1fa"
         android:textSize="18sp" />
 
     <Button
@@ -27,6 +30,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:textColor="#FF0000"
+        android:background="#bbe1fa"
         android:text="logout" />
 
 </LinearLayout>

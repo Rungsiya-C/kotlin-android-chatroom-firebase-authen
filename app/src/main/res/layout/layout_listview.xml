@@ -2,22 +2,27 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/re_layout"
     android:layout_margin="10dp"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal" >
 
     <TextView
         android:id="@+id/username"
         android:text="USERNAME"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
+        android:layout_weight="1"
         android:layout_height="wrap_content"
-        android:gravity="center"/>
+        android:background="#0f4c75"
+        android:textColor="#bbe1fa"
+        android:layout_gravity="left"/>
 
     <TextView
+        android:background="#bbe1fa"
         android:id="@+id/text"
         android:text="Text"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
+        android:layout_weight="4"
         android:layout_height="wrap_content"
-        android:gravity="center"/>
+        android:layout_gravity="right"/>
 
 </LinearLayout>

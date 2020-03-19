@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="#084177"
     tools:context=".authen">
 
     <com.facebook.login.widget.LoginButton
@@ -13,9 +14,14 @@
         android:layout_gravity="center"/>
 
     <Button
+        android:layout_marginTop="50dp"
         android:id="@+id/btnAbout"
+        android:textColor="#b7472a"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="About" />
+        android:layout_marginBottom="10dp"
+        android:text="Readme"
+        android:background="#c2f0fc"
+        />
 
 </LinearLayout>

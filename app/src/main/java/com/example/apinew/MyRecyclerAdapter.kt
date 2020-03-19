@@ -62,7 +62,7 @@ class MyRecyclerAdapter(context: Context, fm: FragmentManager, private val dataS
             dataSource.getJSONObject(position).getString("title").toString()
         )
         holder.detailTextView.setText(
-            dataSource.getJSONObject(position).getString("description").toString()
+            "อ่านเพิ่มเติม ..."
         )
 
         Glide.with(thiscontext)

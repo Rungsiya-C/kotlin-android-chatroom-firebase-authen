@@ -131,7 +131,7 @@ class authen : Fragment() {
 //                transaction.commit()
 //
 //            }else{
-                Toast.makeText(context,"Sorry username or password is wrong !!!", Toast.LENGTH_LONG).show()
+                Toast.makeText(context,"your welcome !!!", Toast.LENGTH_LONG).show()
 //            }
 
             val fragment_RecyclerView = Recycler_view()
@@ -139,6 +139,14 @@ class authen : Fragment() {
             val transaction : FragmentTransaction = fm!!.beginTransaction()
             transaction.replace(R.id.layout, fragment_RecyclerView,"fragment_list_view")
             transaction.addToBackStack("fragment_list_view")
+
+            val emptyShow = Empty()
+            transaction.replace(R.id.show, emptyShow, "EmptyShow")
+            val emptyHead = Empty()
+            transaction.replace(R.id.head, emptyHead, "EmptyHead")
+            val emptyAdd = Empty()
+            transaction.replace(R.id.add, emptyAdd, "EmptyAdd")
+
             transaction.commit()
 
         }

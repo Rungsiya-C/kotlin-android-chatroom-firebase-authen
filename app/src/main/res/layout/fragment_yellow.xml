@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#084177"
+    tools:context=".Yellow">
+
+    <Button
+        android:layout_marginTop="80dp"
+        android:id="@+id/btnBrand"
+        android:textColor="#084177"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:text="Anonymous Chatroom"
+        android:background="#c2f0fc"
+        />
+
+</FrameLayout>

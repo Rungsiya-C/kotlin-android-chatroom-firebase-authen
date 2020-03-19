@@ -4,12 +4,16 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
+    android:background="#0f4c75"
+    android:padding="10dp"
     tools:context=".DataRealtime">
 
     <EditText
         android:id="@+id/addMsgText"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
+        android:textColor="#bbe1fa"
+        android:textColorHint="#bbe1fa"
         android:ems="10"
         android:hint="message"
         android:inputType="textPersonName" />
@@ -21,10 +25,12 @@
 <!--        android:text="add1" />-->
 
         <Button
+            android:background="#bbe1fa"
             android:text="Send Message"
+            android:textColor="#0f4c75"
             android:id="@+id/btn2"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="match_parent"/>
 
     <!--    <Button-->
     <!--        android:text="add3"-->
